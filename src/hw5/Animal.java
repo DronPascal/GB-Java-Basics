@@ -1,4 +1,4 @@
-package hw4;
+package hw5;
 
 public abstract class Animal {
     protected double runLimit, jumpLimit, swimLimit;

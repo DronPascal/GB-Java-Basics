@@ -14,17 +14,18 @@ public abstract class Animal {
         this.jumpLimit = jumpLimit;
         this.swimLimit = swimLimit;
     }
+
     //предположим, что на вход поступают только положительные числа
     public void run(double distance) {
-        System.out.println("run: " + (distance<=runLimit ? "true" : "false"));
+        System.out.println("run: " + (distance <= runLimit ? "true" : "false"));
     }
 
     public void jump(double distance) {
-        System.out.println("jump: " + (distance<=jumpLimit ? "true" : "false"));
+        System.out.println("jump: " + (distance <= jumpLimit ? "true" : "false"));
     }
 
     public void swim(double distance) {
-        System.out.println("swim: " + (distance<=swimLimit ? "true" : "false"));
+        System.out.println("swim: " + (distance <= swimLimit ? "true" : "false"));
     }
 
 }
