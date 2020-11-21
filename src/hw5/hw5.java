@@ -24,7 +24,7 @@ public class hw5 {
         cats[2].setEatLimit(24);  //обжора
 
         for (Cat cat : cats){  //котов не меняем, поэтому можно и так обойти
-            //пусть их именами остаются идентификаторы
+            //пусть их именами остаются идентификаторами
             System.out.println("\nКот "+ cat.toString()+ " ест:");
             cat.eatFrom(dish);
         }
