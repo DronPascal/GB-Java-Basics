@@ -1,7 +1,5 @@
 package hw5;
 
-import hw4.Animal;
-
 public class Cat extends Animal {
     //по заданию сказано, что это свойство КОТОВ, поэтому не станем менять класс Animal
     protected double eatLimit;
