@@ -36,9 +36,15 @@ public class Cat extends Animal {
             else
                 System.out.println("Кот обожрался и еще осталось.");
 
-            if (foodVolume >= eatLimit)
+            if (foodVolume >= eatLimit) {
                 foodContainer.setFoodVolume(foodVolume - eatLimit);
+                satiety = true;
+            }
         }
         else System.out.println("Ошибка.");
+    }
+
+    public boolean isSatiety() {
+        return satiety;
     }
 }

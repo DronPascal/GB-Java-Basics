@@ -23,10 +23,11 @@ public class hw5 {
         cats[2] = new Cat();
         cats[2].setEatLimit(24);  //обжора
 
-        for (Cat cat : cats){  //котов не меняем, поэтому можно и так обойти
-            //пусть их именами остаются идентификаторами
+        for (Cat cat : cats){  //Сat - ссылочный тип, поэтому можно и так обходить. Возможность менять объекты Cat не пропадает
+            //пусть их именами остаются идентификаторы
             System.out.println("\nКот "+ cat.toString()+ " ест:");
             cat.eatFrom(dish);
+            System.out.println("Сытость кота: "+cat.isSatiety());
         }
     }
 }
