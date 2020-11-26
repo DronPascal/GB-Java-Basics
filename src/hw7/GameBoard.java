@@ -39,7 +39,9 @@ public class GameBoard extends JFrame {
         aiLevelButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                aiLevelButton.setLabel("Сложность: Тяжелая");
+                int gameDifficulty = game.getDifficulty();
+                aiLevelButton.setLabel(gameDifficulty == 0 ? "Сложность: Тяжелая" : "Сложность: Легкая");
+                game.setDifficulty((gameDifficulty+1)%2);
             }
         });
 
@@ -83,13 +85,13 @@ public class GameBoard extends JFrame {
 
     boolean isTurnable(int x, int y) {
         boolean result = false;
-        if (x >= 0 && y >= 0 && gameField[y][x] == nullSymbol)
+        if (x >= 0 && y >= 0 && gameField[x][y] == nullSymbol)
             result = true;
         return result;
     }
 
     void updateGameField(int x, int y) {
-        gameField[y][x] = game.getCurrentPlayer().getPlayerSign();
+        gameField[x][y] = game.getCurrentPlayer().getPlayerSign();
     }
 
     boolean checkWin() {
@@ -132,5 +134,13 @@ public class GameBoard extends JFrame {
 
     public GameButton getButton(int buttonIndex) {
         return gameButtons[buttonIndex];
+    }
+
+    public char[][] getGameField() {
+        return gameField;
+    }
+
+    public static int getDimension() {
+        return dimension;
     }
 }
